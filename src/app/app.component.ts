@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'password-generator';
+  colorMode = 'light';
+  
+  changeColorMode() {
+    if (this.colorMode === 'light') {
+      this.colorMode = 'dark';
+    } else {
+      this.colorMode = 'light';
+    }
+  }
 }
