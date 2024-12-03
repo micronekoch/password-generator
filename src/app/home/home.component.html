@@ -10,6 +10,19 @@
         <div class="card">
           <h5 class="card-header">Input</h5>
           <div class="card-body">
+            <form [formGroup]="generatorForm">
+              <div class="mb-3">
+                <label for="length" class="form-label">Length</label>
+                <input id="length" type="number" formControlName="passwordLength" class="form-control" autofocus>
+              </div>
+
+              <div class="mb-3">
+                <label for="symbols" class="form-label">Symbols</label>
+                <input id="symbols" type="text" formControlName="symbols" class="form-control">
+              </div>
+
+              <button class="btn btn-primary" (click)="generatePassword()">Generate</button>
+            </form>
           </div>
         </div>
       </div>
@@ -18,6 +31,10 @@
         <div class="card">
           <h5 class="card-header">Output</h5>
           <div class="card-body">
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input readonly type="text" class="form-control" [value]="generatedPassword">
+            </div>
           </div>
         </div>
       </div>
